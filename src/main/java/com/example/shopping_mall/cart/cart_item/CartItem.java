@@ -1,5 +1,6 @@
 package com.example.shopping_mall.cart.cart_item;
 
+import com.example.shopping_mall.Product.Product;
 import com.example.shopping_mall.cart.Cart;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,12 +21,12 @@ public class CartItem {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int cartItemId;
+  private Long cartItemId;
 
-//  @ManyToOne
-//  private Cart cart;
-//
-//  @ManyToOne
-//  private Product product;
+  @ManyToOne
+  private Cart cart;
+
+  @ManyToOne
+  private Product product;
 
 }
