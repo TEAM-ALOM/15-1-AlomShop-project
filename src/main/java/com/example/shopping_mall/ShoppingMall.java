@@ -1,13 +1,13 @@
-package com.example.week4_toy1;
+package com.example.shopping_mall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Week4Toy1Application {
+public class ShoppingMall {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Week4Toy1Application.class, args);
+		SpringApplication.run(ShoppingMall.class, args);
 	}
 
 }

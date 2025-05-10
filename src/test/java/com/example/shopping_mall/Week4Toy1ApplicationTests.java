@@ -1,4 +1,4 @@
-package com.example.week4_toy1;
+package com.example.shopping_mall;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
