@@ -1,9 +1,9 @@
-package com.example.shopping_mall.Product;
+package com.example.shopping_mall.product;
 
-import com.example.shopping_mall.Product.Dto.ProductRequest;
-import com.example.shopping_mall.Product.Dto.ProductResponse;
-import com.example.shopping_mall.ProductCategory.ProductCategory;
-import com.example.shopping_mall.ProductCategory.ProductCategoryRepository;
+import com.example.shopping_mall.product.dto.ProductRequest;
+import com.example.shopping_mall.product.dto.ProductResponse;
+import com.example.shopping_mall.productCategory.ProductCategory;
+import com.example.shopping_mall.productCategory.ProductCategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

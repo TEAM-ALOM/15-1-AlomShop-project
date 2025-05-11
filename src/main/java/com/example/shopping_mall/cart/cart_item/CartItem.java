@@ -1,6 +1,6 @@
 package com.example.shopping_mall.cart.cart_item;
 
-import com.example.shopping_mall.Product.Product;
+import com.example.shopping_mall.product.Product;
 import com.example.shopping_mall.cart.Cart;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

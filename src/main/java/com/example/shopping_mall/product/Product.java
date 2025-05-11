@@ -1,6 +1,6 @@
-package com.example.shopping_mall.Product;
+package com.example.shopping_mall.product;
 
-import com.example.shopping_mall.ProductCategory.ProductCategory;
+import com.example.shopping_mall.productCategory.ProductCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

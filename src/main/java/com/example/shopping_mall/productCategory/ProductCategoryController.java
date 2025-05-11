@@ -1,4 +1,4 @@
-package com.example.shopping_mall.ProductCategory;
+package com.example.shopping_mall.productCategory;
 
 
 import lombok.RequiredArgsConstructor;
