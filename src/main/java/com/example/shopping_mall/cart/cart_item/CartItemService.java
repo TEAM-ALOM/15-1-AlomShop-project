@@ -61,7 +61,7 @@ public class CartItemService {
     return CartItemResponse.fromList(cartItemRepository.findByProductCategoryId(productCategoryId));
   }
 
-/*  // user.id로 조회
+  // user.id로 조회
   public List<CartItemResponse> getCartItemsByUserId(Long userId) {
     return CartItemResponse.fromList(cartItemRepository.findByCartUserId(userId));
   }
@@ -71,5 +71,5 @@ public class CartItemService {
       Long productCategoryId) {
     return CartItemResponse.fromList(
         cartItemRepository.findByCartUserIdAndProductCategoryId(userId, productCategoryId));
-  }*/
+  }
 }

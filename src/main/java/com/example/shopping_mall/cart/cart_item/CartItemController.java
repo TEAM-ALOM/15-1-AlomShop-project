@@ -51,7 +51,7 @@ public class CartItemController {
   }
 
   // userId&productCategoryId로 조회 (User 기능 미구현 상태로 주석)
-    /*@GetMapping("user-category")
+    @GetMapping("user-category")
     public ResponseEntity<List<CartItemResponse>> getCartItemsByUserIdAndCategory(
             @RequestParam Long userId,
             @RequestParam Long productCategoryId
@@ -60,5 +60,4 @@ public class CartItemController {
             cartItemService.getCartItemsByUserIdAndProductCategoryId(userId, productCategoryId)
         );
     }
-    */
 }
