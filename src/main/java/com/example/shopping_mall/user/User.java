@@ -1,11 +1,10 @@
-package com.example.shopping_mall.cart;
+package com.example.shopping_mall.user;
 
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,11 +15,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cart {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long cartId;
 
-//  @OneToOne
-//  User user;
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String email;
+    private String username;
+    private String password;
 }
