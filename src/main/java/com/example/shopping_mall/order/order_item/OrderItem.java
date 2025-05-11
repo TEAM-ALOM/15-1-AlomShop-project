@@ -1,6 +1,7 @@
 package com.example.shopping_mall.order.order_item;
 
 
+import com.example.shopping_mall.Product.Product;
 import com.example.shopping_mall.order.Order;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,8 +19,8 @@ public class OrderItem {
 
     private int quantity;
 
-   // @ManyToOne
-   // private Product product;
+    @ManyToOne
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "order_id")

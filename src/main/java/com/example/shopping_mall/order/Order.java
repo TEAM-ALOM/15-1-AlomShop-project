@@ -1,6 +1,8 @@
 package com.example.shopping_mall.order;
 
 
+import com.example.shopping_mall.order.order_item.OrderItem;
+import com.example.shopping_mall.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,13 +21,13 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
 
-   // @ManyToOne
-   // private User user;
+    @ManyToOne
+    private User user;
 
     private LocalDate orderDate;
 
-   // @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-   // private List<OrderItem> orderItems = new ArrayList<>();
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems = new ArrayList<>();
 
 
 }
