@@ -1,7 +1,7 @@
-package com.example.shopping_mall.Product;
+package com.example.shopping_mall.product;
 
-import com.example.shopping_mall.Product.Dto.ProductRequest;
-import com.example.shopping_mall.Product.Dto.ProductResponse;
+import com.example.shopping_mall.product.dto.ProductRequest;
+import com.example.shopping_mall.product.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
