@@ -19,10 +19,10 @@ public class CartItemResponse {
 
   public static CartItemResponse from(CartItem cartItem) {
     return CartItemResponse.builder()
-        .cartItemId(cartItem.getCartItemId())
-        .cartId(cartItem.getCart().getCartId())
-        .productId(cartItem.getProduct().getProductId())
-        .build();
+            .cartItemId(cartItem.getCartItemId())
+            .cartId(cartItem.getCart().getCartId())
+            .productId(cartItem.getProduct().getId())
+            .build();
   }
 
   public static List<CartItemResponse> fromList(List<CartItem> cartItems) {

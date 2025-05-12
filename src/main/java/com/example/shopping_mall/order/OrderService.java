@@ -60,7 +60,7 @@ public class OrderService {
                 .filter(order -> dto.getOrderDate() == null || order.getOrderDate().equals(dto.getOrderDate()))
                 .filter(order -> dto.getUserId() == null || order.getUser().getId().equals(dto.getUserId()))
                 .filter(order -> dto.getProductId() == null || order.getOrderItems().stream()
-                        .anyMatch(item -> item.getProduct().getProductId().equals(dto.getProductId())))
+                        .anyMatch(item -> item.getProduct().getId().equals(dto.getProductId())))
                 .toList();
     }
 

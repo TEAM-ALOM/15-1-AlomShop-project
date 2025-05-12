@@ -23,11 +23,11 @@ public class CartItemService {
   @Transactional // 트랜잭션을 시작하여 성공시 커밋, 실패시 롤백
   public CartItemResponse addCartItem(Long cartId, Long productId) {
     Cart cart = cartRepository.findById(cartId)
-        .orElseThrow(() -> new IllegalArgumentException("해당 cart가 존재하지 않습니다. id = " + cartId));
+            .orElseThrow(() -> new IllegalArgumentException("해당 cart가 존재하지 않습니다. id = " + cartId));
 
     Product product = productRepository.findById(productId)
-        .orElseThrow(
-            () -> new IllegalArgumentException("해당 product가 존재하지 않습니다. id = " + productId));
+            .orElseThrow(
+                    () -> new IllegalArgumentException("해당 product가 존재하지 않습니다. id = " + productId));
 
     CartItem cartItem = new CartItem();
     cartItem.setCart(cart);
@@ -42,8 +42,8 @@ public class CartItemService {
     for (Long id : cartItemIds) {
       // ID로 CartItem 찾기
       CartItem cartItemToDelete = cartItemRepository.findById(id)
-          .orElseThrow(
-              () -> new IllegalArgumentException("ID " + id + "에 해당하는 장바구니 항목이 존재하지 않습니다."));
+              .orElseThrow(
+                      () -> new IllegalArgumentException("ID " + id + "에 해당하는 장바구니 항목이 존재하지 않습니다."));
 
       // 해당 항목 삭제
       cartItemRepository.delete(cartItemToDelete);
@@ -55,21 +55,25 @@ public class CartItemService {
     return CartItemResponse.fromList(cartItemRepository.findByProductId(productId));
   }
 
-
-  // product_category_id로 조회
-  public List<CartItemResponse> getCartItemsByProductCategoryId(Long productCategoryId) {
-    return CartItemResponse.fromList(cartItemRepository.findByProductCategoryId(productCategoryId));
+  // product.category.categoryId로 조회
+  public List<CartItemResponse> getCartItemsByProductCategoryId(Long categoryId) {
+    return CartItemResponse.fromList(
+            cartItemRepository.findByProductCategoryCategoryId(categoryId));
   }
 
-  // user.id로 조회
+  // cart.user.id로 조회
   public List<CartItemResponse> getCartItemsByUserId(Long userId) {
     return CartItemResponse.fromList(cartItemRepository.findByCartUserId(userId));
   }
 
-  // user.id & product_category_id로 조회
-  public List<CartItemResponse> getCartItemsByUserIdAndProductCategoryId(Long userId,
-      Long productCategoryId) {
+  // cart.user.id & product.category.categoryId로 조회
+  public List<CartItemResponse> getCartItemsByUserIdAndProductCategoryId(Long userId, Long categoryId) {
     return CartItemResponse.fromList(
-        cartItemRepository.findByCartUserIdAndProductCategoryId(userId, productCategoryId));
+            cartItemRepository.findByCartUserIdAndProductCategoryCategoryId(userId, categoryId));
   }
+
+  public List<CartItemResponse> getAllCartItems() {
+    return CartItemResponse.fromList(cartItemRepository.findAll());
+  }
+
 }

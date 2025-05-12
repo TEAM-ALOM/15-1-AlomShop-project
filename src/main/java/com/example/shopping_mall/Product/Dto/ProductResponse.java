@@ -20,9 +20,11 @@ public class ProductResponse {
 
     public static ProductResponse from(Product product) {
         return ProductResponse.builder()
-                .productId(product.getProductId())
+                .productId(product.getId())
                 .productName(product.getProductName())
-                .categoryName(product.getCategory().getCategoryName())
+                .categoryName(
+                        product.getCategory() != null ? product.getCategory().getCategoryName() : null
+                )
                 .build();
     }
 

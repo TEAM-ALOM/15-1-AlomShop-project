@@ -60,4 +60,10 @@ public class CartItemController {
             cartItemService.getCartItemsByUserIdAndProductCategoryId(userId, productCategoryId)
         );
     }
+
+  @GetMapping
+  public ResponseEntity<List<CartItemResponse>> getAllCartItems() {
+    return ResponseEntity.ok(cartItemService.getAllCartItems());
+  }
+
 }
